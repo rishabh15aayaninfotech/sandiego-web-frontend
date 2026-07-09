@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>San Diego Door and Window</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#">
+        <img src="assets/logo.png" alt="San Diego Door and Window">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <a class="active" href="#">Home</a>
+        <a href="about.shtml">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="phone-link" href="tel:8585642564"><i class="bi bi-telephone-fill"></i> 858-564-2564</a>
+        <a class="quote-link" href="#contact">Free Estimate</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">San Diego Door and Window</span>
+          <h1>Expert Windows &amp; Doors </br> for Your San Diego Home</h1>
+          <p>Providing homeowners with quality products, expert workmanship, </br> and aesthetic excellence for over 25 years.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-orange" href="#contact">Get a Free Estimate</a>
+            <a class="btn btn-light" href="#products">View Gallery</a>
+          </div>
+        </div>
+        <div class="hero-cards" aria-label="Company highlights">
+          <article>
+            <i class="bi bi-geo-alt-fill"></i>
+            <div>
+              <h2>Our Philosophy</h2>
+              <p>Great products and expert workmanship for every home.</p>
+            </div>
+          </article>
+          <article>
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <div>
+              <h2>Premium Windows</h2>
+              <p>Vinyl, fiberglass, wood, and aluminum tailored to fit.</p>
+            </div>
+          </article>
+          <article>
+            <i class="bi bi-door-open-fill"></i>
+            <div>
+              <h2>Expert Doors</h2>
+              <p>The most popular styles with affordable local service.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-actions">
+      <div class="container action-grid">
+        <a href="#"><i class="bi bi-truck action-symbol"></i><span>Track Your Order <i class="bi bi-arrow-right"></i></span></a>
+        <a href="#"><i class="bi bi-patch-check action-symbol"></i><span>Energy Saving <i class="bi bi-arrow-right"></i></span></a>
+        <a href="#"><i class="bi bi-door-open action-symbol"></i><span>Measure Your Old <i class="bi bi-arrow-right"></i></span></a>
+        <a href="#"><i class="bi bi-clipboard2-check action-symbol"></i><span>Find an Installer <i class="bi bi-arrow-right"></i></span></a>
+        <a href="#"><i class="bi bi-map action-symbol"></i><span>DIY Installation Guide <i class="bi bi-arrow-right"></i></span></a>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Products</h2>
+          <p>Most installations can be completed in one day without damage to stucco or drywall.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <img src="assets/product-hardware.png" alt="Hardware products">
+            <div><h3>Hardware</h3><a href="#">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/product-vinyl.png" alt="Vinyl window products">
+            <div><h3>Vinyl Products</h3><a href="#">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/product-aluminum.png" alt="Aluminum window products">
+            <div><h3>Aluminum Products</h3><a href="#">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/product-fiberglass.png" alt="Fiberglass entry doors">
+            <div><h3>Fiberglass Entry Doors</h3><a href="#">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/product-wood.png" alt="Wood entry doors">
+            <div><h3>Wood Entry Doors</h3><a href="#">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+          </article>
+          <article class="product-card">
+            <img src="assets/product-interior.png" alt="Interior door options">
+            <div><h3>Interior Door Options</h3><a href="#">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="section-kicker">Locally Owned &amp; Operated</span>
+          <h2>We appreciate your business &amp; trust.</h2>
+          <p>We would like to thank you for thinking of us. We believe the more you learn, the more you will see the benefit, value and payback from having San Diego Door &amp; Window craft your next home renovation project.</p>
+          <p>With over 25 years of experience in the construction and window &amp; door industries, we know that quality products at a great price are not enough. Our customers need and deserve good service.</p>
+          <div class="trust-list">
+            <span><i class="bi bi-check-circle"></i> Energy Efficiency</span>
+            <span><i class="bi bi-check-circle"></i> Expert Installation</span>
+            <span><i class="bi bi-check-circle"></i> Premium Selection</span>
+            <span><i class="bi bi-check-circle"></i> Tax Credit Advice</span>
+          </div>
+        </div>
+        <div class="about-photo">
+          <img src="assets/trust-window.png" alt="Decorative installed window detail">
+          <div class="experience-badge"><strong>25+ Years</strong><span>Industry Experience</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Services</h2>
+          <p>Most installations can be completed in one day without damage to stucco or drywall.</p>
+        </div>
+        <div class="service-feature-grid">
+          <article class="service-card">
+            <i class="bi bi-grid-3x3-gap-fill"></i>
+            <h3>Window Solutions</h3>
+            <p>Vinyl, Fiberglass, Wood, and Aluminum windows. Upgrade your existing aluminum or wood windows efficiently.</p>
+            <a href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+          </article>
+          <article class="service-card">
+            <i class="bi bi-door-open-fill"></i>
+            <h3>Premium Doors</h3>
+            <p>Top-quality service and affordable pricing on all the most popular styles of replacement doors.</p>
+            <a href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+          </article>
+        </div>
+        <div class="service-mini-grid">
+          <article><i class="bi bi-tools"></i><span>Custom<br>Craftsmanship</span></article>
+          <article><i class="bi bi-compass"></i><span>Expert<br>Consultation</span></article>
+          <article><i class="bi bi-shield-check"></i><span>Lifetime<br>Guarantee</span></article>
+          <article><i class="bi bi-window-sidebar"></i><span>Kitchen<br>Remodeling</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-kicker">Happy Clients</span>
+          <h2>What Our Customers Say</h2>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; <i class="bi bi-quote"></i></div>
+            <p>"Alan was very informative and did not try to over sell me. I have already recommended them to my best friend."</p>
+            <div class="author"><span>DE</span><strong>Dawn E.</strong><small>Home Advisor</small></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; <i class="bi bi-quote"></i></div>
+            <p>"Excellent, customized windows at a hard to beat price. Ordered online and got exactly what I ordered to the exact 1/4 inch."</p>
+            <div class="author"><span>JG</span><strong>John G.</strong><small>Yelp Reviewer</small></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; <i class="bi bi-quote"></i></div>
+            <p>"I ordered windows for my home and had them shipped to Michigan. I was extremely pleased with the quality and customer service."</p>
+            <div class="author"><span>WT</span><strong>Will Turner</strong><small>Houzz Customer</small></div>
+          </article>
+          <article class="testimonial-card">
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; <i class="bi bi-quote"></i></div>
+            <p>"I ordered windows for my home and had them shipped to Michigan. I was extremely pleased with the quality and customer service."</p>
+            <div class="author"><span>WT</span><strong>Will Turner</strong><small>Houzz Customer</small></div>
+          </article>
+        </div>
+        <div class="slider-dots" aria-hidden="true"><button><i class="bi bi-chevron-left"></i></button><button><i class="bi bi-chevron-right"></i></button></div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <h2>Contact us for a<br>FREE Estimate</h2>
+          <p>Ready to transform your home? Get in touch with our experts today for a personalized quote and professional consultation.</p>
+          <a class="contact-method" href="tel:8585642564"><i class="bi bi-telephone"></i><span>Call us anytime<strong>(858) 564-2564</strong></span></a>
+          <address class="contact-method"><i class="bi bi-geo-alt"></i><span>Our Showroom<strong>10905 Scripps Ranch Court Ste. B, San Diego</strong></span></address>
+        </div>
+        <form class="quote-form">
+          <h3>Request Your Quote</h3>
+          <label> Your Name:<input type="text" placeholder="Full Name"></label>
+          <label> Email Address:<input type="email" placeholder="email@example.com"></label>
+          <label> Message:<textarea placeholder="Tell us about your project..."></textarea></label>
+          <button type="submit">Send Request <i class="bi bi-send"></i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo.png" alt="San Diego Door and Window">
+        <p>Your trusted partner for premium windows and doors in San Diego for over 25 years.</p>
+        <div class="socials"><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-yelp"></i></a></div>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <a href="#">Home</a><a href="about.shtml">About Us</a><a href="#services">Services</a><a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="#">Replacement Windows</a><a href="#">Custom Door Systems</a><a href="#">Design Consultation</a><a href="#">Kitchen Remodeling</a>
+      </div>
+      <div>
+        <h3>Newsletter</h3>
+        <p>Find out more information on deals and sales by signing up here!</p>
+        <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
+      </div>
+    </div>
+    <div class="container copyright">&copy; 2024 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</div>
+  </footer>
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      document.querySelector(".site-header")?.classList.toggle("is-menu-open", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.querySelector("i").className = isOpen ? "bi bi-x-lg" : "bi bi-list";
+    });
+  </script>
+</body>
+</html>
