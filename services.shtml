@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | San Diego Door and Window</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css?v=20260709-2" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.shtml">
+        <img src="assets/logo.png" alt="San Diego Door and Window">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <i class="bi bi-list"></i>
+      </button>
+      <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+        <a href="index.shtml">Home</a>
+        <a href="about.shtml">About</a>
+        <a class="active" href="services.shtml">Services</a>
+        <a href="contact.shtml">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="phone-link" href="tel:8585642564"><i class="bi bi-telephone-fill"></i> 858-564-2564</a>
+        <a class="quote-link" href="#estimate">Free Estimate</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="services-page">
+    <section class="services-hero">
+      <div class="container about-hero-inner">
+        <span class="eyebrow">Trusted for 25+ Years</span>
+        <h1>Our Expertise</h1>
+        <p>Bridging local heritage with modern service-oriented excellence to protect and beautify your home.</p>
+      </div>
+    </section>
+
+    <section class="replacement-system">
+      <div class="container replacement-grid">
+        <div class="replacement-photo">
+          <img src="assets/services-craft.png" alt="Detail shot of high-quality custom window craftsmanship">
+        </div>
+        <div class="replacement-copy">
+          <h2>Advanced Replacement System</h2>
+          <p>San Diego Door &amp; Window utilizes a proprietary replacement window and door system that allows homeowners to upgrade existing aluminum or wood units without the typical construction headaches.</p>
+          <ul>
+            <li><i class="bi bi-check-circle-fill"></i><span><strong>No Structural Damage</strong>Installations completed without damage to exterior stucco or interior drywall.</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span><strong>Efficiency Focused</strong>Upgrade to modern, energy-efficient materials at a substantially lower cost.</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span><strong>One-Day Turnaround</strong>Most standard home installations are finalized within a single working day.</span></li>
+          </ul>
+          <a class="process-link" href="#">Learn More About the Process</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-offerings">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Core Service Offerings</h2>
+          <p>Precision-engineered solutions for every corner of your home.</p>
+        </div>
+        <div class="offerings-grid">
+          <article class="offering-card premium-window-card">
+            <div>
+              <i class="bi bi-grid-3x3-gap-fill"></i>
+              <h3>Premium Windows</h3>
+              <p>Explore our curated selection of Vinyl, Fiberglass, Wood, and Aluminum options. Each fit is custom-measured to guarantee a hermetic seal and perfect aesthetic match.</p>
+              <a href="#">Browse Options <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <img src="assets/services-windows.png" alt="Bright San Diego living room with premium windows">
+          </article>
+          <article class="offering-card kitchen-card">
+            <i class="bi bi-kanban"></i>
+            <h3>Kitchen Remodeling</h3>
+            <p>From modern cabinets to efficient layouts, we transform the heart of your home into a culinary sanctuary.</p>
+            <img src="assets/services-kitchen.png" alt="Modern kitchen remodeling project">
+          </article>
+          <article class="craft-card">
+            <h3>Custom Craftsmanship</h3>
+            <p>Unique architectural details that set your property apart. We specialize in non-standard shapes and heritage restoration.</p>
+            <a href="#">View Portfolio</a>
+          </article>
+          <article class="offering-card replacement-door-card">
+            <img src="assets/services-door.png" alt="Custom wood replacement door">
+            <div>
+              <i class="bi bi-door-open"></i>
+              <h3>Replacement Doors</h3>
+              <p>Upgrade your security and curb appeal with our wide selection of entry, sliding patio, and bifold doors. Engineered for longevity and ease of operation.</p>
+              <div class="door-features">
+                <span><i class="bi bi-circle"></i> Secure Locking</span>
+                <span><i class="bi bi-circle"></i> Weather Stripping</span>
+                <span><i class="bi bi-circle"></i> Thermal Breaks</span>
+                <span><i class="bi bi-circle"></i> Custom Sizing</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-estimate" id="estimate">
+      <div class="container estimate-grid">
+        <div class="why-copy">
+          <h2>Why San Diego Homeowners Choose Us</h2>
+          <article>
+            <i class="bi bi-chat-left-text-fill"></i>
+            <div><h3>Free Expert Design Consultation</h3><p>Not sure what fits? Our experts provide zero-pressure onsite evaluations to match products with your home's architecture.</p></div>
+          </article>
+          <article>
+            <i class="bi bi-shield-check"></i>
+            <div><h3>Lifetime Guarantee</h3><p>We stand by our work. Our lifetime guarantee covers both materials and installation labor, giving you total peace of mind.</p></div>
+          </article>
+          <article>
+            <i class="bi bi-people-fill"></i>
+            <div><h3>Local Expertise</h3><p>Being locally owned means we understand San Diego building codes and coastal weather requirements better than any big-box retailer.</p></div>
+          </article>
+        </div>
+        <form class="quote-form service-quote-form">
+          <h3>Schedule Your Free Estimate</h3>
+          <p>Ready to transform your home? Fill out the form below or call us directly at (858) 564-2564.</p>
+          <label>Full Name<input type="text" placeholder="Your Name"></label>
+          <label>Email Address<input type="email" placeholder="email@example.com"></label>
+          <label>Message<textarea placeholder="Tell us about your project..."></textarea></label>
+          <button type="submit">Request Estimate Now</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img class="footer-logo" src="assets/logo.png" alt="San Diego Door and Window">
+        <p>Your trusted partner for premium windows and doors in San Diego for over 25 years.</p>
+        <div class="socials"><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-yelp"></i></a></div>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <a href="index.shtml">Home</a><a href="about.shtml">About Us</a><a href="services.shtml">Services</a><a href="contact.shtml">Contact</a>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <a href="#">Replacement Windows</a><a href="#">Custom Door Systems</a><a href="#">Design Consultation</a><a href="#">Kitchen Remodeling</a>
+      </div>
+      <div>
+        <h3>Newsletter</h3>
+        <p>Find out more information on deals and sales by signing up here!</p>
+        <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
+      </div>
+    </div>
+    <div class="container copyright">&copy; 2026 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</div>
+  </footer>
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const mainNav = document.querySelector(".main-nav");
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      document.querySelector(".site-header")?.classList.toggle("is-menu-open", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.querySelector("i").className = isOpen ? "bi bi-x-lg" : "bi bi-list";
+    });
+  </script>
+</body>
+</html>

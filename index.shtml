@@ -6,7 +6,7 @@
   <title>San Diego Door and Window</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/styles.css?v=20260709-2" rel="stylesheet">
 </head>
 <body>
   <header class="site-header">
@@ -20,8 +20,8 @@
       <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
         <a class="active" href="#">Home</a>
         <a href="about.shtml">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="services.shtml">Services</a>
+        <a href="contact.shtml">Contact</a>
       </nav>
       <div class="header-actions">
         <a class="phone-link" href="tel:8585642564"><i class="bi bi-telephone-fill"></i> 858-564-2564</a>
@@ -223,7 +223,7 @@
       </div>
       <div>
         <h3>Navigation</h3>
-        <a href="#">Home</a><a href="about.shtml">About Us</a><a href="#services">Services</a><a href="#contact">Contact</a>
+        <a href="#">Home</a><a href="about.shtml">About Us</a><a href="services.shtml">Services</a><a href="contact.shtml">Contact</a>
       </div>
       <div>
         <h3>Services</h3>
@@ -235,7 +235,7 @@
         <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
       </div>
     </div>
-    <div class="container copyright">&copy; 2024 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</div>
+    <div class="container copyright">&copy; 2026 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</div>
   </footer>
   <script>
     const navToggle = document.querySelector(".nav-toggle");
