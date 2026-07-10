@@ -153,7 +153,10 @@
         <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
       </div>
     </div>
-    <div class="container copyright">&copy; 2026 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</div>
+    <div class="container copyright">
+      <span>&copy; 2026 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</span>
+      <span class="footer-credit">Designed &amp; Developed by <a href="https://aayaninfotech.com/" target="_blank" rel="noopener noreferrer">Aayan Infotech</a><img class="make-in-india-logo" src="assets/make-in-india.png" alt="Make in India"></span>
+    </div>
   </footer>
   <script>
     const navToggle = document.querySelector(".nav-toggle");

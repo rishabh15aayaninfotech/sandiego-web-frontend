@@ -92,23 +92,23 @@
           </article>
           <article class="product-card">
             <img src="assets/product-vinyl.png" alt="Vinyl window products">
-            <div><h3>Vinyl Products</h3><a href="https://www.discountdoorandwindow.com/allsubproducts/67e28f098a3756abfb2b9675" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+            <div><h3>Vinyl Products</h3><a href="https://www.discountdoorandwindow.com" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
           </article>
           <article class="product-card">
             <img src="assets/product-aluminum.png" alt="Aluminum window products">
-            <div><h3>Aluminum Products</h3><a href="https://www.discountdoorandwindow.com/allsubproducts/67e28feb8a3756abfb2b967b" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+            <div><h3>Aluminum Products</h3><a href="https://www.discountdoorandwindow.com" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
           </article>
           <article class="product-card">
             <img src="assets/product-fiberglass.png" alt="Fiberglass entry doors">
-            <div><h3>Fiberglass Entry Doors</h3><a href="https://www.discountdoorandwindow.com/categories/67e290568a3756abfb2b967e" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+            <div><h3>Fiberglass Entry Doors</h3><a href="https://www.discountdoorandwindow.com" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
           </article>
           <article class="product-card">
             <img src="assets/product-wood.png" alt="Wood entry doors">
-            <div><h3>Wood Entry Doors</h3><a href="https://www.discountdoorandwindow.com/allsubproducts/67e290a88a3756abfb2b9680" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+            <div><h3>Wood Entry Doors</h3><a href="https://www.discountdoorandwindow.com" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
           </article>
           <article class="product-card">
             <img src="assets/product-interior.png" alt="Interior door options">
-            <div><h3>Interior Door Options</h3><a href="https://www.discountdoorandwindow.com/allsubproducts/67e292778a3756abfb2b9684" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+            <div><h3>Interior Door Options</h3><a href="https://www.discountdoorandwindow.com" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
           </article>
         </div>
       </div>
@@ -236,7 +236,10 @@
         <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
       </div>
     </div>
-    <div class="container copyright">&copy; 2026 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</div>
+    <div class="container copyright">
+      <span>&copy; 2026 San Diego Door and Window. All rights reserved. 10905 Scripps Ranch Court Ste. B San Diego, CA 92131</span>
+      <span class="footer-credit">|| Designed &amp; Developed by <a href="https://aayaninfotech.com/" target="_blank" rel="noopener noreferrer">Aayan Infotech</a><img class="make-in-india-logo" src="assets/make-in-india.png" alt="Make in India"></span>
+    </div>
   </footer>
   <script>
     const navToggle = document.querySelector(".nav-toggle");

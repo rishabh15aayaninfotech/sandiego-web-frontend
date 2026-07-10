@@ -774,7 +774,7 @@ img {
 }
 
 .site-footer {
-  padding: 170px 0 111px;
+  padding: 170px 0 30px;
   background: #dfe3eb;
 }
 
@@ -850,6 +850,29 @@ img {
   color: #687484;
   text-align: center;
   font-size: 12px;
+}
+
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.footer-credit a {
+  display: inline;
+  margin-bottom: 0;
+  color: var(--blue);
+  font-size: inherit;
+  font-weight: 800;
+}
+
+.make-in-india-logo {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-page {
@@ -1960,12 +1983,12 @@ img {
   }
 
   .site-footer {
-    padding: 110px 0 74px;
+    padding: 110px 0 30px;
   }
 
   .copyright {
     margin-top: 95px;
-    padding-top: 48px;
+    padding-top: 20px;
   }
 
   .about-hero {
@@ -2200,12 +2223,12 @@ img {
   }
 
   .site-footer {
-    padding: 82px 0 54px;
+    padding: 82px 0 30px;
   }
 
   .copyright {
     margin-top: 64px;
-    padding-top: 36px;
+    padding-top: 20px;
   }
 
   .about-hero {
@@ -2553,12 +2576,12 @@ img {
   }
 
   .site-footer {
-    padding: 60px 0 42px;
+    padding: 60px 0 30px;
   }
 
   .copyright {
     margin-top: 42px;
-    padding-top: 28px;
+    padding-top: 20px;
   }
 
   .about-hero {
