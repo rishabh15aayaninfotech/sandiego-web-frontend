@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>San Diego Door and Window</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="css/styles.css?v=20260709-2" rel="stylesheet">
@@ -88,7 +88,7 @@
         <div class="product-grid">
           <article class="product-card">
             <img src="assets/product-hardware.png" alt="Hardware products">
-            <div><h3>Hardware</h3><a href="https://www.discountdoorandwindow.com/categories/6790d133bb0c211dc674d750" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
+            <div><h3>Hardware</h3><a href="https://www.discountdoorandwindow.com" target="_blank" rel="noopener noreferrer">Buy Now <i class="bi bi-arrow-right"></i></a></div>
           </article>
           <article class="product-card">
             <img src="assets/product-vinyl.png" alt="Vinyl window products">
@@ -146,13 +146,13 @@
             <i class="bi bi-grid-3x3-gap-fill"></i>
             <h3>Window Solutions</h3>
             <p>Vinyl, Fiberglass, Wood, and Aluminum windows. Upgrade your existing aluminum or wood windows efficiently.</p>
-            <a href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <!--<a href="#">Learn More <i class="bi bi-arrow-right"></i></a>-->
           </article>
           <article class="service-card">
             <i class="bi bi-door-open-fill"></i>
             <h3>Premium Doors</h3>
             <p>Top-quality service and affordable pricing on all the most popular styles of replacement doors.</p>
-            <a href="#">Learn More <i class="bi bi-arrow-right"></i></a>
+            <!--<a href="#">Learn More <i class="bi bi-arrow-right"></i></a>-->
           </article>
         </div>
         <div class="service-mini-grid">
@@ -204,13 +204,194 @@
           <a class="contact-method" href="tel:8585642564"><i class="bi bi-telephone"></i><span>Call us anytime<strong>(858) 564-2564</strong></span></a>
           <address class="contact-method"><i class="bi bi-geo-alt"></i><span>Our Showroom<strong>10905 Scripps Ranch Court Ste. B, San Diego</strong></span></address>
         </div>
-        <form class="quote-form">
-          <h3>Request Your Quote</h3>
-          <label> Your Name:<input type="text" placeholder="Full Name"></label>
-          <label> Email Address:<input type="email" placeholder="email@example.com"></label>
-          <label> Message:<textarea placeholder="Tell us about your project..."></textarea></label>
-          <button type="submit">Send Request <i class="bi bi-send"></i></button>
+        <!--<form class="quote-form">-->
+        <!--  <h3>Request Your Quote</h3>-->
+        <!--  <label> Your Name:<input type="text" placeholder="Full Name"></label>-->
+        <!--  <label> Email Address:<input type="email" placeholder="email@example.com"></label>-->
+        <!--  <label> Message:<textarea placeholder="Tell us about your project..."></textarea></label>-->
+        <!--  <button type="submit">Send Request <i class="bi bi-send"></i></button>-->
+        <!--</form>-->
+        <form id="estimateForm" class="quote-form service-quote-form" action="submit-estimate.php" method="post">
+
+            <h3>Request Your Quote</h3>
+        
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    name="name"
+                    required
+                    maxlength="100"
+                    placeholder="Your Name">
+            </label>
+        
+            <label>
+                Email Address
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    maxlength="150"
+                    placeholder="email@example.com">
+            </label>
+        
+            <label>
+                Subject
+                <input
+                    type="hidden"
+                    value="home form"
+                    name="subject"
+                    maxlength="150"
+                    placeholder="Project Type">
+            </label>
+        
+            <label>
+                Message
+                <textarea
+                    name="message"
+                    required
+                    maxlength="3000"
+                    placeholder="Tell us about your project..."></textarea>
+            </label>
+        
+            <!-- Honeypot -->
+            <input
+                type="text"
+                name="website"
+                autocomplete="off"
+                tabindex="-1"
+                style="display:none">
+        
+            <button type="submit">
+                Request Estimate Now
+            </button>
+        
         </form>
+        
+        <!--<div id="estimateResponse"></div>-->
+        <style>
+            #toast-container{
+                position:fixed;
+                top:20px;
+                right:20px;
+                z-index:99999;
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+            }
+            
+            .toast{
+                min-width:300px;
+                max-width:400px;
+                padding:15px 20px;
+                border-radius:8px;
+                color:#fff;
+                font-size:15px;
+                box-shadow:0 8px 20px rgba(0,0,0,.2);
+                animation:slideIn .3s ease;
+                opacity:1;
+                transition:all .4s ease;
+            }
+            
+            .toast.success{
+                background:#28a745;
+            }
+            
+            .toast.error{
+                background:#dc3545;
+            }
+            
+            .toast.hide{
+                opacity:0;
+                transform:translateX(100%);
+            }
+            
+            @keyframes slideIn{
+                from{
+                    transform:translateX(100%);
+                    opacity:0;
+                }
+                to{
+                    transform:translateX(0);
+                    opacity:1;
+                }
+            }
+        </style>
+        <div id="toast-container"></div>
+        <script>
+            function showToast(message, type = "success") {
+
+            const container = document.getElementById("toast-container");
+        
+            const toast = document.createElement("div");
+            toast.className = `toast ${type}`;
+            toast.innerHTML = message;
+        
+            container.appendChild(toast);
+        
+            setTimeout(() => {
+                toast.classList.add("hide");
+        
+                setTimeout(() => {
+                    toast.remove();
+                }, 400);
+        
+            }, 4000); // disappears after 4 seconds
+        }
+        </script>
+        <script>
+            document.getElementById("estimateForm").addEventListener("submit", function(e){
+            
+                e.preventDefault();
+            
+                const form = this;
+                const btn = form.querySelector("button");
+                const response = document.getElementById("estimateResponse");
+            
+                btn.disabled = true;
+                btn.innerHTML = "Submitting...";
+            
+                fetch(form.action,{
+                    method:"POST",
+                    body:new FormData(form),
+                    credentials:"same-origin",
+                    headers:{
+                        "X-Requested-With":"XMLHttpRequest"
+                    }
+                })
+                .then(async r=>{
+            
+                    const json=await r.json();
+            
+                    if(!r.ok){
+                        throw new Error(json.message);
+                    }
+            
+                    return json;
+            
+                })
+                .then(data => {
+
+                    showToast(data.message, "success");
+                
+                    form.reset();
+                
+                })
+                .catch(err => {
+                
+                    showToast(err.message, "error");
+                
+                })
+                .finally(() => {
+                
+                    btn.disabled = false;
+                    btn.innerHTML = "Request Estimate Now";
+                
+                });
+            
+            });
+            
+            </script>
       </div>
     </section>
   </main>
@@ -227,13 +408,27 @@
         <a href="#">Home</a><a href="about.shtml">About Us</a><a href="services.shtml">Services</a><a href="contact.shtml">Contact</a>
       </div>
       <div>
-        <h3>Services</h3>
-        <a href="#">Replacement Windows</a><a href="#">Custom Door Systems</a><a href="#">Design Consultation</a><a href="#">Kitchen Remodeling</a>
+        <h3>Products</h3>
+        <a href="https://www.discountdoorandwindow.com/">Hardware</a><a href="https://www.discountdoorandwindow.com/">Vinyl Products</a><a href="https://www.discountdoorandwindow.com/">Aluminum Products</a><a href="https://www.discountdoorandwindow.com/">Fiberglass Entry Doors</a>
       </div>
       <div>
         <h3>Newsletter</h3>
         <p>Find out more information on deals and sales by signing up here!</p>
-        <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
+        <form id="newsletterForm" class="newsletter" action="submit-newsletter.php" method="post">
+            <input
+                type="email"
+                id="newsletterEmail"
+                name="email"
+                placeholder="Enter Email"
+                required
+            >
+        
+            <button type="submit" aria-label="Subscribe">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </form>
+
+        <div id="newsletterMessage"></div>
       </div>
     </div>
     <div class="container copyright">
@@ -252,5 +447,55 @@
       navToggle.querySelector("i").className = isOpen ? "bi bi-x-lg" : "bi bi-list";
     });
   </script>
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+    
+        e.preventDefault();
+    
+        const form = this;
+        const submitBtn = form.querySelector('button');
+        const message = document.getElementById('newsletterMessage');
+    
+        submitBtn.disabled = true;
+        message.innerHTML = 'Please wait...';
+    
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            credentials: 'same-origin',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(async response => {
+    
+            const text = await response.text();
+    
+            if (!response.ok) {
+                throw new Error(text);
+            }
+    
+            return text;
+        })
+        .then(text => {
+    
+            message.innerHTML = '<span style="color:green;">' + text + '</span>';
+    
+            form.reset();
+    
+        })
+        .catch(err => {
+    
+            message.innerHTML = '<span style="color:red;">' + err.message + '</span>';
+    
+        })
+        .finally(() => {
+    
+            submitBtn.disabled = false;
+    
+        });
+    
+    });
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us | San Diego Door and Window</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="css/styles.css?v=20260709-2" rel="stylesheet">
@@ -124,13 +124,77 @@
         <a href="index.shtml">Home</a><a href="about.shtml">About Us</a><a href="services.shtml">Services</a><a href="contact.shtml">Contact</a>
       </div>
       <div>
-        <h3>Services</h3>
-        <a href="#">Replacement Windows</a><a href="#">Custom Door Systems</a><a href="#">Design Consultation</a><a href="#">Kitchen Remodeling</a>
+        <h3>Products</h3>
+        <a href="https://www.discountdoorandwindow.com/">Hardware</a><a href="https://www.discountdoorandwindow.com/">Vinyl Products</a><a href="https://www.discountdoorandwindow.com/">Aluminum Products</a><a href="https://www.discountdoorandwindow.com/">Fiberglass Entry Doors</a>
       </div>
       <div>
         <h3>Newsletter</h3>
         <p>Find out more information on deals and sales by signing up here!</p>
-        <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
+        <form id="newsletterForm" class="newsletter" action="submit-newsletter.php" method="post">
+            <input
+                type="email"
+                id="newsletterEmail"
+                name="email"
+                placeholder="Enter Email"
+                required
+            >
+        
+            <button type="submit" aria-label="Subscribe">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </form>
+
+        <div id="newsletterMessage"></div>
+        <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            
+                e.preventDefault();
+            
+                const form = this;
+                const submitBtn = form.querySelector('button');
+                const message = document.getElementById('newsletterMessage');
+            
+                submitBtn.disabled = true;
+                message.innerHTML = 'Please wait...';
+            
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    credentials: 'same-origin',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(async response => {
+            
+                    const text = await response.text();
+            
+                    if (!response.ok) {
+                        throw new Error(text);
+                    }
+            
+                    return text;
+                })
+                .then(text => {
+            
+                    message.innerHTML = '<span style="color:green;">' + text + '</span>';
+            
+                    form.reset();
+            
+                })
+                .catch(err => {
+            
+                    message.innerHTML = '<span style="color:red;">' + err.message + '</span>';
+            
+                })
+                .finally(() => {
+            
+                    submitBtn.disabled = false;
+            
+                });
+            
+            });
+    </script>
       </div>
     </div>
     <div class="container copyright">

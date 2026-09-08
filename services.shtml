@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Services | San Diego Door and Window</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="css/styles.css?v=20260709-2" rel="stylesheet">
@@ -53,7 +53,7 @@
             <li><i class="bi bi-check-circle-fill"></i><span><strong>Efficiency Focused</strong>Upgrade to modern, energy-efficient materials at a substantially lower cost.</span></li>
             <li><i class="bi bi-check-circle-fill"></i><span><strong>One-Day Turnaround</strong>Most standard home installations are finalized within a single working day.</span></li>
           </ul>
-          <a class="process-link" href="#">Learn More About the Process</a>
+          <a class="process-link" href="about.shtml">Learn More About the Process</a>
         </div>
       </div>
     </section>
@@ -70,7 +70,7 @@
               <i class="bi bi-grid-3x3-gap-fill"></i>
               <h3>Premium Windows</h3>
               <p>Explore our curated selection of Vinyl, Fiberglass, Wood, and Aluminum options. Each fit is custom-measured to guarantee a hermetic seal and perfect aesthetic match.</p>
-              <a href="#">Browse Options <i class="bi bi-arrow-right"></i></a>
+              <!--<a href="#">Browse Options <i class="bi bi-arrow-right"></i></a>-->
             </div>
             <img src="assets/services-windows.png" alt="Bright San Diego living room with premium windows">
           </article>
@@ -83,7 +83,7 @@
           <article class="craft-card">
             <h3>Custom Craftsmanship</h3>
             <p>Unique architectural details that set your property apart. We specialize in non-standard shapes and heritage restoration.</p>
-            <a href="#">View Portfolio</a>
+            <a href="about.shtml">View Portfolio</a>
           </article>
           <article class="offering-card replacement-door-card">
             <img src="assets/services-door.png" alt="Custom wood replacement door">
@@ -120,14 +120,191 @@
             <div><h3>Local Expertise</h3><p>Being locally owned means we understand San Diego building codes and coastal weather requirements better than any big-box retailer.</p></div>
           </article>
         </div>
-        <form class="quote-form service-quote-form">
-          <h3>Schedule Your Free Estimate</h3>
-          <p>Ready to transform your home? Fill out the form below or call us directly at (858) 564-2564.</p>
-          <label>Full Name<input type="text" placeholder="Your Name"></label>
-          <label>Email Address<input type="email" placeholder="email@example.com"></label>
-          <label>Message<textarea placeholder="Tell us about your project..."></textarea></label>
-          <button type="submit">Request Estimate Now</button>
+        <form id="estimateForm" class="quote-form service-quote-form" action="submit-estimate.php" method="post">
+
+            <h3>Schedule Your Free Estimate</h3>
+        
+            <p>
+                Ready to transform your home? Fill out the form below or call us directly at
+                <strong>(858) 564-2564</strong>.
+            </p>
+        
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    name="name"
+                    required
+                    maxlength="100"
+                    placeholder="Your Name">
+            </label>
+        
+            <label>
+                Email Address
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    maxlength="150"
+                    placeholder="email@example.com">
+            </label>
+        
+            <label>
+                Subject
+                <input
+                    type="text"
+                    name="subject"
+                    maxlength="150"
+                    placeholder="Project Type">
+            </label>
+        
+            <label>
+                Message
+                <textarea
+                    name="message"
+                    required
+                    maxlength="3000"
+                    placeholder="Tell us about your project..."></textarea>
+            </label>
+        
+            <!-- Honeypot -->
+            <input
+                type="text"
+                name="website"
+                autocomplete="off"
+                tabindex="-1"
+                style="display:none">
+        
+            <button type="submit">
+                Request Estimate Now
+            </button>
+        
         </form>
+        
+        <!--<div id="estimateResponse"></div>-->
+        <style>
+            #toast-container{
+                position:fixed;
+                top:20px;
+                right:20px;
+                z-index:99999;
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+            }
+            
+            .toast{
+                min-width:300px;
+                max-width:400px;
+                padding:15px 20px;
+                border-radius:8px;
+                color:#fff;
+                font-size:15px;
+                box-shadow:0 8px 20px rgba(0,0,0,.2);
+                animation:slideIn .3s ease;
+                opacity:1;
+                transition:all .4s ease;
+            }
+            
+            .toast.success{
+                background:#28a745;
+            }
+            
+            .toast.error{
+                background:#dc3545;
+            }
+            
+            .toast.hide{
+                opacity:0;
+                transform:translateX(100%);
+            }
+            
+            @keyframes slideIn{
+                from{
+                    transform:translateX(100%);
+                    opacity:0;
+                }
+                to{
+                    transform:translateX(0);
+                    opacity:1;
+                }
+            }
+        </style>
+        <div id="toast-container"></div>
+        <script>
+            function showToast(message, type = "success") {
+
+            const container = document.getElementById("toast-container");
+        
+            const toast = document.createElement("div");
+            toast.className = `toast ${type}`;
+            toast.innerHTML = message;
+        
+            container.appendChild(toast);
+        
+            setTimeout(() => {
+                toast.classList.add("hide");
+        
+                setTimeout(() => {
+                    toast.remove();
+                }, 400);
+        
+            }, 4000); // disappears after 4 seconds
+        }
+        </script>
+        <script>
+            document.getElementById("estimateForm").addEventListener("submit", function(e){
+            
+                e.preventDefault();
+            
+                const form = this;
+                const btn = form.querySelector("button");
+                const response = document.getElementById("estimateResponse");
+            
+                btn.disabled = true;
+                btn.innerHTML = "Submitting...";
+            
+                fetch(form.action,{
+                    method:"POST",
+                    body:new FormData(form),
+                    credentials:"same-origin",
+                    headers:{
+                        "X-Requested-With":"XMLHttpRequest"
+                    }
+                })
+                .then(async r=>{
+            
+                    const json=await r.json();
+            
+                    if(!r.ok){
+                        throw new Error(json.message);
+                    }
+            
+                    return json;
+            
+                })
+                .then(data => {
+
+                    showToast(data.message, "success");
+                
+                    form.reset();
+                
+                })
+                .catch(err => {
+                
+                    showToast(err.message, "error");
+                
+                })
+                .finally(() => {
+                
+                    btn.disabled = false;
+                    btn.innerHTML = "Request Estimate Now";
+                
+                });
+            
+            });
+            
+            </script>
       </div>
     </section>
   </main>
@@ -144,13 +321,77 @@
         <a href="index.shtml">Home</a><a href="about.shtml">About Us</a><a href="services.shtml">Services</a><a href="contact.shtml">Contact</a>
       </div>
       <div>
-        <h3>Services</h3>
-        <a href="#">Replacement Windows</a><a href="#">Custom Door Systems</a><a href="#">Design Consultation</a><a href="#">Kitchen Remodeling</a>
+        <h3>Products</h3>
+        <a href="https://www.discountdoorandwindow.com/">Hardware</a><a href="https://www.discountdoorandwindow.com/">Vinyl Products</a><a href="https://www.discountdoorandwindow.com/">Aluminum Products</a><a href="https://www.discountdoorandwindow.com/">Fiberglass Entry Doors</a>
       </div>
       <div>
         <h3>Newsletter</h3>
         <p>Find out more information on deals and sales by signing up here!</p>
-        <form class="newsletter"><input type="email" placeholder="Enter Email"><button aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button></form>
+        <form id="newsletterForm" class="newsletter" action="submit-newsletter.php" method="post">
+            <input
+                type="email"
+                id="newsletterEmail"
+                name="email"
+                placeholder="Enter Email"
+                required
+            >
+        
+            <button type="submit" aria-label="Subscribe">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </form>
+
+        <div id="newsletterMessage"></div>
+        <script>
+            document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            
+                e.preventDefault();
+            
+                const form = this;
+                const submitBtn = form.querySelector('button');
+                const message = document.getElementById('newsletterMessage');
+            
+                submitBtn.disabled = true;
+                message.innerHTML = 'Please wait...';
+            
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    credentials: 'same-origin',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(async response => {
+            
+                    const text = await response.text();
+            
+                    if (!response.ok) {
+                        throw new Error(text);
+                    }
+            
+                    return text;
+                })
+                .then(text => {
+            
+                    message.innerHTML = '<span style="color:green;">' + text + '</span>';
+            
+                    form.reset();
+            
+                })
+                .catch(err => {
+            
+                    message.innerHTML = '<span style="color:red;">' + err.message + '</span>';
+            
+                })
+                .finally(() => {
+            
+                    submitBtn.disabled = false;
+            
+                });
+            
+            });
+    </script>
       </div>
     </div>
     <div class="container copyright">
