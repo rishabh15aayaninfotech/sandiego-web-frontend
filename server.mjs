@@ -7,6 +7,8 @@ const root = process.cwd();
 const types = new Map([
   [".html", "text/html; charset=utf-8"],
   [".shtml", "text/html; charset=utf-8"],
+  [".txt", "text/plain; charset=utf-8"],
+  [".xml", "application/xml; charset=utf-8"],
   [".css", "text/css; charset=utf-8"],
   [".js", "text/javascript; charset=utf-8"],
   [".png", "image/png"],
@@ -14,23 +16,29 @@ const types = new Map([
   [".jpeg", "image/jpeg"],
   [".svg", "image/svg+xml"],
 ]);
+const securityHeaders = {
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+};
 
 createServer(async (req, res) => {
   const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
   const filePath = path.resolve(root, urlPath === "/" ? "index.shtml" : `.${urlPath}`);
 
   if (!filePath.startsWith(root)) {
-    res.writeHead(403);
+    res.writeHead(403, securityHeaders);
     res.end("Forbidden");
     return;
   }
 
   try {
     const body = await readFile(filePath);
-    res.writeHead(200, { "Content-Type": types.get(path.extname(filePath)) || "application/octet-stream" });
+    res.writeHead(200, {
+      ...securityHeaders,
+      "Content-Type": types.get(path.extname(filePath)) || "application/octet-stream",
+    });
     res.end(body);
   } catch {
-    res.writeHead(404);
+    res.writeHead(404, securityHeaders);
     res.end("Not found");
   }
 }).listen(port, "127.0.0.1", () => {
