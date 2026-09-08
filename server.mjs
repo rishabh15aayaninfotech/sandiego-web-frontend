@@ -25,6 +25,19 @@ const crawlerFileHeaders = {
 
 createServer(async (req, res) => {
   const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
+  const queryString = (req.url || "").includes("?") ? `?${(req.url || "").split("?").slice(1).join("?")}` : "";
+  const host = (req.headers.host || "").split(":")[0].toLowerCase();
+
+  if (host === "sandiegodoorandwindow.com" || urlPath === "/index.shtml") {
+    const redirectPath = urlPath === "/index.shtml" ? "/" : urlPath;
+    res.writeHead(301, {
+      ...securityHeaders,
+      Location: `https://www.sandiegodoorandwindow.com${redirectPath}${queryString}`,
+    });
+    res.end();
+    return;
+  }
+
   const filePath = path.resolve(root, urlPath === "/" ? "index.shtml" : `.${urlPath}`);
 
   if (!filePath.startsWith(root)) {
