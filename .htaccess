@@ -1,0 +1,22 @@
+RewriteEngine On
+
+# Use one canonical hostname.
+RewriteCond %{HTTP_HOST} !^www\.sandiegodoorandwindow\.com$ [NC]
+RewriteRule ^(.*)$ https://www.sandiegodoorandwindow.com/$1 [R=301,L]
+
+# Use the root URL as the homepage canonical URL.
+RewriteCond %{THE_REQUEST} \s/+index\.shtml[?\s] [NC]
+RewriteRule ^index\.shtml$ https://www.sandiegodoorandwindow.com/ [R=301,L]
+
+# Advertise HTTPS policy for the full domain, including subdomains.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  <FilesMatch "^(robots|llms)\.txt$|^sitemap\.xml$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# Serve crawler-facing files with explicit content types.
+AddType text/plain .txt
+AddType application/xml .xml
