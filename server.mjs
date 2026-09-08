@@ -19,6 +19,9 @@ const types = new Map([
 const securityHeaders = {
   "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
 };
+const crawlerFileHeaders = {
+  "Cache-Control": "no-cache, no-store, must-revalidate",
+};
 
 createServer(async (req, res) => {
   const urlPath = decodeURIComponent((req.url || "/").split("?")[0]);
@@ -32,8 +35,10 @@ createServer(async (req, res) => {
 
   try {
     const body = await readFile(filePath);
+    const isCrawlerFile = urlPath === "/robots.txt" || urlPath === "/sitemap.xml" || urlPath === "/llms.txt";
     res.writeHead(200, {
       ...securityHeaders,
+      ...(isCrawlerFile ? crawlerFileHeaders : {}),
       "Content-Type": types.get(path.extname(filePath)) || "application/octet-stream",
     });
     res.end(body);
